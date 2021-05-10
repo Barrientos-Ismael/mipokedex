@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Pokedex</title>
+	<link rel="stylesheet" type="text/css" href="pokestyle.css">
+</head>
+
+<body>
+	<section id="page">
+		<header>
+			<h1>Pokedex</h1>
+			
+		</header>
+		<nav>
+			<ul id="pokelista"></ul>
+		</nav>
+		<main id="showPokemon">
+			<div class="pokemon-info">
+				<h2 id="pokemon-name" class="pokemon-name"></h2>
+				<p id="pokemon-type" class="pokemon-type"></p>
+                <img id="pokemon-img" class="pokemon-img" src="";/>
+				<ul id="pokemon-stats" class = "pokemon-stats"></ul>
+            </div>
+		</main>
+		<footer class="container__paginas">
+			<a href="#" onclick="anteriorPag()" class="flechas">&#8249; Página anterior</a>
+			<a href="#" onclick="siguientePag()" class="flechas">Página siguiente &#8250;</a>
+			<a href="#" onclick="anteriorPoke()" class="flechas">&#8249;Pokemon anterior</a>
+			<a href="#" onclick="siguientePoke()" class="flechas">Pokemon siguiente &#8250;</a>
+		</footer>
+	  </section>
+
+	<script type="text/javascript" src="pokescript.js"></script>
+	<!-- por alguna razón, si pongo el script acá, la pagina anda bien, si no no.-->
+</body>
+
+</html>

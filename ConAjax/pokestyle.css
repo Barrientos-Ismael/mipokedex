@@ -1,0 +1,125 @@
+body {
+  background-color: orangered;
+  color: white;
+  margin: 0;
+  font-family: rubik;
+}
+
+#page {
+  display: grid;
+  width: 100%;
+  height: 250px;
+  grid-template-areas: "head head"
+                       "nav  main"
+                       "foot  foot";
+  grid-template-rows: 50px 1fr 30px;
+  grid-template-columns: 200px 1fr;
+}
+
+#page > header {
+  grid-area: head;
+  background-color: orangered;
+}
+
+#page > nav {
+  grid-area: nav;
+  padding-inline-start: 0;
+  background-color: purple;
+}
+
+#page > main {
+  grid-area: main;
+  background-color: orangered;
+}
+
+#page > footer {
+  grid-area: foot;
+  text-transform: uppercase;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#showpokemon{
+  display: block;
+  margin: 20px;
+}
+
+.nodoPokeLista{
+  margin-top: 5px;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.nodoPokeLista:hover {
+  animation: bounce 0.5s linear;
+}
+
+.pokemon-info {
+  block-size: inherit;
+  padding: 10px;
+  background-color: #f4f4f4;
+  color: #222;
+  text-align: center;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+  margin-bottom: 0px;
+  font-size: 32px;
+  font-weight: normal;
+}
+
+.pokemon-type {
+  margin-top: 5px;
+  color: #666;
+  font-weight: lighter;
+}
+
+.pokemon-img {
+  height: 180px;
+}
+
+.pokemon-stats{
+  margin-top: 5px;
+  list-style-type: none;
+  display: flex;
+  height: 100px;
+  justify-content: space-around;
+}
+
+.titulo {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+  margin-bottom: 3rem;
+}
+
+
+.flechas {
+  color:white;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.flechas:hover {
+  color: blue;
+}
+
+@keyframes bounce {
+  20% {
+    transform: translateY(-6px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
