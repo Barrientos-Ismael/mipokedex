@@ -4,42 +4,43 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Pokedex</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="pokestyle.css">
 </head>
 
 <body>
-	<section id="page">
-		<header>
+	<div class="container">
+		<div class="titulo">
 			<h1>Pokedex</h1>
-			
-		</header>
-		<nav>
-			<ul id="pokelista"></ul>
-			<div class="">
-				<a href="#" onclick="anteriorPag()" class="flechas">&#8249; Ant</a>
-				<input type="text" id="guessField" class="guessField">
-				<input type="submit" value="buscar" class="guessSubmit">
-				<a href="#" onclick="siguientePag()" class="flechas">Sig &#8250;</a>
+		</div>
+		<ul id="pokelista"></ul>
+		<div class="container__paginas">
+			<a href="#" onclick="anteriorPag()" class="flechas">&#8249; Página anterior</a>
+			<div class='buscador'>
+				<input type="text" id="guessField" class="guessField" placeholder="Busqueda">
+				<input type="submit" value="Buscar" id="guessSubmit" class="guessSubmit" onclick="buscarPoke()">
 			</div>
-			<div class="container__paginas">
-				<label for="guessField">Buscar por id o nombre </label>
-				<input type="text" id="guessField" class="guessField">
-				<input type="submit" value="Enviar respuesta" class="guessSubmit">
-			</div>
-		</nav>
-		<main id="showPokemon">
-			<div class="pokemon-info">
-				<h2 id="pokemon-name" class="pokemon-name"></h2>
-				<p id="pokemon-type" class="pokemon-type"></p>
-                <img id="pokemon-img" class="pokemon-img" src="";/>
-				<ul id="pokemon-stats" class ="pokemon-stats"></ul>
-            </div>
-		</main>
-		<footer class="container__paginas">
+			<a href="#" onclick="siguientePag()" class="flechas">Página siguiente &#8250;</a>
+		</div>
+		<div id="showPokemon">
+			<div class="card">
+				<img class="card-image" src="" />
+				<h2 class="card-title"></h2>
+				<div class="card-subtitle">
+					<p class="card-type"></p>
+					<p class="card-exp"></p>
+					<p class="card-height"></p>
+					<p class="card-weight"></p>
+				</div>
+	      </div>
+		</div>
+		<div class="container__paginas">
 			<a href="#" onclick="anteriorPoke()" class="flechas">&#8249;Pokemon anterior</a>
 			<a href="#" onclick="siguientePoke()" class="flechas">Pokemon siguiente &#8250;</a>
-		</footer>
-	  </section>
+		</div>
+	</div>
+
 
 	<script type="text/javascript" src="pokescript.js"></script>
 	<!-- por alguna razón, si pongo el script acá, la pagina anda bien, si no no.-->
