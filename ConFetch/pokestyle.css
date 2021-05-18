@@ -1,69 +1,177 @@
-body {
-    background-color: orangered;
-    color: white;
-    margin: 0;
-    font-family: rubik;
+:root{
+  --fuenteParrafos: 'Noto Sans JP', sans-serif;
 }
 
-.container {
-    padding: 40px;
-    margin: 0 auto;
+body {
+  background-image: url(background-image.png);
+  background-size: cover;
+  font-family: rubik;
 }
 
 h1 {
-    text-transform: uppercase;
-    text-align: center;
-    font-size: 54px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 54px;
 }
 
-#pokedex {
+.container {
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.container__paginas,
+.titulo,
+#pokelista{
+  display: grid;
+}
+
+
+.container__paginas {
+  margin: 30px 0;
+  text-transform: uppercase;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.buscador{
+  display:grid;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.guessSubmit{
+  text-transform: uppercase;
+  background-color: #4CAF50;
+  border: none;
+  color:white;
+  padding: 8px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.guessField{
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
+  border: 0;
+}
+
+@media (min-width: 1400px) {
+  .guessField{
+    border-radius: 4%;
+    transition: width 0.4s ease-in-out;
+    width: 14%;
+  }
+  .guessField:focus{
+    width: 100%;
+  }
+}
+
+.container__paginas:last-child {
+  margin: 30px 0;
+  text-transform: uppercase;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+
+.titulo {
+  grid-template-columns: 1fr 8fr 1fr;
+  margin-bottom: 3rem;
+}
+
+#pokelista {
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  list-style: none;
+  font-size: 20px;
+  margin-bottom: 60px;
+}
+
+.nodoPokeLista {
+  text-align: center;
+  text-transform: capitalize;
+  color: black;
+  padding: 9px;
+  background-color: yellow;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.nodoPokeLista:hover {
+  animation: bounce 0.5s linear;
+}
+
+
+@media (min-width: 800px) {
+  .showPokemon {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 20px;
-    padding-inline-start: 0;
-    cursor:pointer
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pokemon-info {
+    margin-right: 15px;
+  }
 }
 
-.card {
-    list-style: none;
-    padding: 40px;
-    background-color: #f4f4f4;
-    color: #222;
-    text-align: center;
+.showPokemon {
+  background-color: #f4f4f488;
+  color: #222;
+  text-align: center;
+  width: 45%;
+  margin: 0 auto;
+  padding: 30px 0;
+  border-radius: 3%;
 }
 
-.card:hover {
-    animation: bounce 0.5s linear;
+.pokemon-name {
+  text-transform: capitalize;
+  text-align: center;
+  font-size: 32px;
+  font-weight: normal;
 }
 
-.card-title {
-    text-transform: capitalize;
-    margin-bottom: 0px;
-    font-size: 32px;
-    font-weight: normal;
-}
-.card-subtitle {
-    margin-top: 5px;
-    color: #666;
-    font-weight: lighter;
+.pokemon-info {
+  color: #666;
+  font-weight: lighter;
+  grid-column: 2/3 ;
+  grid-row: 1 / 2;
+  color: rgb(37, 36, 36);
+  font-family: var(--fuenteParrafos);
+  grid-column: 2/3;
+  grid-row: 1/3;
+  padding: 15px;
+  border: 5px solid rgba(139, 139, 1, 0.658);
+  border-radius: 1.5%;
+  background-color: rgba(255, 255, 0, 0.644);
+}  
+
+.pokemon-img {
+  margin: 0 auto;
+  height: 180px;
 }
 
-.card-image {
-    height: 180px;
+.flechas {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.flechas:hover {
+  color: grey;
 }
 
 @keyframes bounce {
-    20% {
-        transform: translateY(-6px);
-    }
-    40% {
-        transform: translateY(0px);
-    }
-
-    80% {
-        transform: translateY(-2px);
-    }
-    100% {
-        transform: translateY(0);
-    }
+  20% {
+    transform: translateY(-6px);
+  }
+  40% {
+    transform: translateY(0px);
+  }
+  80% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
